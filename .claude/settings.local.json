@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(findstr:*)",
+      "Bash(powershell -Command \"\\(Get-Content ''c:\\\\Users\\\\Webpr\\\\Desktop\\\\Clients\\\\WebPrime\\\\PCH-Plomberie\\\\index.html''\\)[317]\")",
+      "Bash(powershell -Command:*)",
+      "Bash(python -c:*)",
+      "Bash(node -e:*)",
+      "Bash(git checkout:*)",
+      "Bash(node update-forms.js:*)"
+    ]
+  }
+}
