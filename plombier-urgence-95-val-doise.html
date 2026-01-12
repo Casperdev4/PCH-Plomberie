@@ -250,7 +250,7 @@
                 <input type="checkbox" id="faq1">
                 <label class="faq-question" for="faq1">Intervenez-vous vraiment 7j/7 et 24h/24 ?</label>
                 <div class="faq-answer">
-                    <p>Oui, notre service d'urgence est disponible tous les jours de la semaine, y compris les week-ends et jours feries. En cas d'urgence plomberie, appelez-nous au 07 78 35 38 37 et nous interviendrons dans les meilleurs delais.</p>
+                    <p>Oui, notre service d'urgence est disponible tous les jours de la semaine, y compris les week-ends et jours fériés. En cas d'urgence plomberie, appelez-nous au 07 78 35 38 37 et nous interviendrons dans les meilleurs délais.</p>
                 </div>
             </div>
             <div class="faq-item">
@@ -264,7 +264,7 @@
                 <input type="checkbox" id="faq3">
                 <label class="faq-question" for="faq3">Les interventions d'urgence coutent-elles plus cher ?</label>
                 <div class="faq-answer">
-                    <p>Les interventions en urgence, notamment la nuit, le week-end et les jours feries, peuvent comporter un supplement. Cependant, nous vous communiquons toujours le tarif avant d'intervenir pour une totale transparence.</p>
+                    <p>Les interventions en urgence, notamment la nuit, le week-end et les jours fériés, peuvent comporter un supplement. Cependant, nous vous communiquons toujours le tarif avant d'intervenir pour une totale transparence.</p>
                 </div>
             </div>
             <div class="faq-item">
@@ -409,12 +409,12 @@
             if (response.ok) {
                 window.location.href = 'https://plombier-95.com/';
             } else {
-                alert('Erreur lors de l\'envoi. Veuillez reessayer.');
+                alert('Erreur lors de l\'envoi. Veuillez réessayer.');
                 btn.textContent = originalText;
                 btn.disabled = false;
             }
         } catch (error) {
-            alert('Erreur de connexion. Veuillez reessayer.');
+            alert('Erreur de connexion. Veuillez réessayer.');
             btn.textContent = originalText;
             btn.disabled = false;
         }
