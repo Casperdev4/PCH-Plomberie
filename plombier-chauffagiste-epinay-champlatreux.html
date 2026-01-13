@@ -207,38 +207,23 @@
 </head>
 
 <body>
-    <header>
-        <nav class="plommmmm">
-            <a href="https://plombier-95.com/" class="logo-link">
-                <img src="pch-plomberie.webp" alt="entreprise débouchage canalisation Ézanville" class="logo"
-                    loading="lazy" decoding="async">
+        <header>
+        <nav class="nav-header">
+            <a href="https://plombier-95.com/" class="nav-logo">
+                <img src="pch-plomberie.webp" alt="entreprise débouchage canalisation 95 Val-d'Oise" loading="lazy" decoding="async">
             </a>
-            <label for="btn" class="icon">
-                <svg viewBox="0 0 100 80" width="40" height="40">
-                    <rect width="80" height="11"></rect>
-                    <rect y="26" width="80" height="11"></rect>
-                    <rect y="52" width="80" height="11"></rect>
-                </svg>
+            <input type="checkbox" id="nav-check" class="nav-checkbox">
+            <label for="nav-check" class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
             </label>
-            <input type="checkbox" id="btn">
-            <ul class="plplplplplpl">
-                <li class="dededede">
-                    <a href="https://plombier-95.com/" title="plombier Ézanville">ACCUEIL</a>
-                </li>
-                <li class="dededede">
-                    <a href="https://plombier-95.com/#prestation" title="plombier chauffagiste Ézanville">NOS
-                        SERVICES</a>
-                </li>
-                <li class="dededede">
-                    <a href="plombier-95-val-doise.html" title="plombier Ézanville">L'ENTREPRISE</a>
-                </li>
-                <li class="dededede">
-                    <a href="devis-plombier-95-val-doise.html" title="devis plombier Ézanville">DEVIS
-                        GRATUIT</a>
-                </li>
-                <li class="dededede">
-                    <a href="tel:+33778353837" title="devis plombier chauffagiste Ézanville">07 78 35 38 37</a>
-                </li>
+            <ul class="nav-menu">
+                <li><a href="https://plombier-95.com/" title="plombier 95">ACCUEIL</a></li>
+                <li><a href="https://plombier-95.com/#prestation" title="plombier chauffagiste 95 Val-d'Oise">NOS SERVICES</a></li>
+                <li><a href="plombier-95-val-doise.html" title="plombier 95 Val-d'Oise">L'ENTREPRISE</a></li>
+                <li><a href="devis-plombier-95-val-doise.html" title="devis plombier 95">DEVIS GRATUIT</a></li>
+                <li class="nav-phone"><a href="tel:+33778353837" title="devis plombier chauffagiste 95 Val-d'Oise">07 78 35 38 37</a></li>
             </ul>
         </nav>
     </header>
@@ -662,13 +647,20 @@
         list.forEach((item) =>
             item.addEventListener('mouseover', activeLink));
     </script>
-    <script>
+        <script>
         document.addEventListener("DOMContentLoaded", function () {
-            var menuToggle = document.getElementById("btn");
-            var navLinks = document.querySelectorAll(".plplplplplpl a");
+            var navCheck = document.getElementById("nav-check");
+            var navToggle = document.querySelector(".nav-toggle");
+            var navLinks = document.querySelectorAll(".nav-menu a");
+
+            navCheck.addEventListener("change", function() {
+                navToggle.classList.toggle("active", this.checked);
+            });
+
             navLinks.forEach(function (link) {
                 link.addEventListener("click", function () {
-                    menuToggle.checked = false;
+                    navCheck.checked = false;
+                    navToggle.classList.remove("active");
                 });
             });
         });
