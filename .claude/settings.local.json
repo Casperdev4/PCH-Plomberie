@@ -10,12 +10,22 @@
       "Bash(node update-forms.js:*)",
       "Bash(git add:*)",
       "Bash(git commit -m \"$\\(cat <<''EOF''\nAjout de sections FAQ sur toutes les pages\n\n- Ajout des styles CSS pour les FAQ \\(accordeon HTML/CSS pur\\)\n- FAQ ajoutee a la page index.html \\(questions generales plomberie\\)\n- FAQ ajoutee a la page devis \\(questions sur les devis\\)\n- FAQ ajoutee a la page entreprise \\(questions sur PCH Plomberie\\)\n- FAQ ajoutee aux pages de services :\n  - Debouchage canalisation\n  - Recherche de fuite\n  - Plombier chauffagiste\n  - Installation WC/sanitaires\n  - Installation tuyauterie cuivre\n  - Plombier urgence\n  - Renovation salle de bain\n\n🤖 Generated with [Claude Code]\\(https://claude.com/claude-code\\)\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
-      "Bash(Get-ChildItem -Path \"c:\\\\Users\\\\privo\\\\Desktop\\\\WebPrime\\\\PCH-Plomberie\" -Filter \"*.html\" -Name)",
-      "Bash(Where-Object { $_ -ne \"index.html\" })",
-      "Bash(ls:*)",
-      "Bash(xargs:*)",
+      "Bash(git push)",
+      "Bash(git commit:*)",
       "Bash(grep:*)",
-      "Bash(git commit:*)"
+      "Bash(ls:*)",
+      "Bash(for file in chemisage-canalisation-95-val-doise.html chauffe-eau-95-val-doise.html chauffagiste-95-val-doise.html plombier-urgence-95-val-doise.html recherche-de-fuite-95-val-doise.html renovation-salle-de-bain-95-val-doise.html)",
+      "Bash(do if [ ! -f \"$file\" ])",
+      "Bash(then echo \"MISSING: $file\")",
+      "Bash(fi)",
+      "Bash(done)",
+      "Bash(for img in debouchage-canalisation-95-val-doise.webp depannage-urgence.webp detecteur-fuite.webp fuite-deau-95-val-doise.webp hydraulic-design-7689068_1280.webp installation-baignoire.webp installation-chaudiere-gaz-95-val-doise.webp installation-douche-italienne.webp installation-wc.webp installation-wc-95.webp note.webp pch-plomberie.webp renovation-salle-de-bain.webp tuyauterie-cuivre.webp val-d-oise.webp)",
+      "Bash(do if [ ! -f \"$img\" ])",
+      "Bash(then echo \"MISSING: $img\")",
+      "Bash(else echo \"EXISTS: $img\")",
+      "Bash(wc:*)",
+      "Bash(git pull:*)",
+      "Bash(git stash:*)"
     ]
   }
 }
