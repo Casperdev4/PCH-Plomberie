@@ -25,7 +25,9 @@
       "Bash(else echo \"EXISTS: $img\")",
       "Bash(wc:*)",
       "Bash(git pull:*)",
-      "Bash(git stash:*)"
+      "Bash(git stash:*)",
+      "Bash(node optimize-images.js:*)",
+      "Bash(git status:*)"
     ]
   }
 }

@@ -324,13 +324,16 @@
             <div class="imageimage">
                 <img src="pch-plomberie.webp" alt="plombier professionnel 95 Val-d’Oise">
             </div>
-            <form id="contactForm" onsubmit="return submitToWebPrime(event)">
+            <form id="contactForm" action="https://formsubmit.co/pchplomberie@gmail.com" method="POST" onsubmit="return sendBoth(event)">
                 <!-- Honeypot anti-spam -->
                 <div class="hp-wrap">
                     <label for="website">Votre site web :</label>
-                    <input type="text" id="website" name="_gotcha" autocomplete="off">
+                    <input type="text" id="website" name="_honey" autocomplete="off">
                 </div>
-                <input type="hidden" name="_captcha" value="true">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_subject" value="Formulaire">
+                <input type="hidden" name="_next" value="https://plombier-95.com/">
                 <label for="name">Nom :</label>
                 <input type="text" id="name" name="nom" required>
 
@@ -506,38 +509,20 @@
         });
     </script>
     <script>
-    async function submitToWebPrime(e) {
+    function sendBoth(e) {
         e.preventDefault();
         var form = document.getElementById('contactForm');
         var btn = form.querySelector('button[type="submit"]');
-        var originalText = btn.textContent;
-
-        // Anti-spam honeypot check
-        var gotchaField = form.querySelector('[name="_gotcha"]');
-        if (gotchaField && gotchaField.value) return false;
-
+        var honeyField = form.querySelector('[name="_honey"]');
+        if (honeyField && honeyField.value) return false;
         btn.textContent = 'Envoi en cours...';
         btn.disabled = true;
-
-        try {
-            var formData = new FormData(form);
-            var response = await fetch('https://webprime.app/webhook/contact/cb2daf6c8c81c94cfc5478ff8a89db7518408fec4294c2f68a291a278bc48876', {
-                method: 'POST',
-                body: formData
-            });
-
-            if (response.ok) {
-                window.location.href = 'https://plombier-95.com/';
-            } else {
-                alert('Erreur lors de l\'envoi. Veuillez réessayer.');
-                btn.textContent = originalText;
-                btn.disabled = false;
-            }
-        } catch (error) {
-            alert('Erreur de connexion. Veuillez réessayer.');
-            btn.textContent = originalText;
-            btn.disabled = false;
-        }
+        var formData = new FormData(form);
+        fetch('https://webprime.app/webhook/contact/cb2daf6c8c81c94cfc5478ff8a89db7518408fec4294c2f68a291a278bc48876', {
+            method: 'POST',
+            body: formData
+        }).catch(function() {});
+        form.submit();
         return false;
     }
     </script>
